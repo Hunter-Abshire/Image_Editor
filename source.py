@@ -6,7 +6,7 @@ pathOut = '/ImageEditor/editedImgs'
 
 for filename in os.listdir(path):
     img = Image.open(f"{path}/{filename}")
-    edit = img.filter(ImageFilter.SHARPEN).convert('L').rotate(-90)
+    edit = img.filter(ImageFilter.SHARPEN).convert('L')
     factor = 1.5
     enhancer = ImageEnhance.Contrast(edit)
     edit = enhancer.enhance(factor)
